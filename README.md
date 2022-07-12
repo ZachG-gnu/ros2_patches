@@ -1,2 +1,2 @@
-# ros2_patches
-Patches for ros2's rttest and pendulum demo packages
+# ROS2 Patches
+When running the pendulum demo, it can be observed that the latency of the first iteration is much higher than the rest of the iterations. This outlier is caused by the demo not yet loaded into cache. In some cases, the initial cache misses of a program when it first starts up can be ignored. Concurrent Real-Time provides a custom patch for the pendulum demo that adds the ability to clear the current statistics while the demo is running. In addition, the patch also improves the initial performance of the pendulum demo when it first starts up.
