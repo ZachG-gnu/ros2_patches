@@ -1,5 +1,5 @@
 # ROS2 Patches
-When running the pendulum demo, it can be observed that the latency of the first iteration is much higher than the rest of the iterations. This outlier is caused by the demo not yet loaded into cache. In some cases, the initial cache misses of a program when it first starts up can be ignored. Concurrent Real-Time provides a custom patch for the pendulum demo that adds the ability to clear the current statistics while the demo is running. In addition, the patch also improves the initial performance of the pendulum demo when it first starts up.
+When running the pendulum demo, it can be observed that the latency of the first iteration is much higher than the rest of the iterations. This outlier is caused by the demo not yet loaded into cache. In some cases, the initial cache misses of a program when it first starts up can be ignored. this patches the pendulum demo to add the capability for clearing the current statistics while the demo is running. In addition, the patch also improves the initial performance of the pendulum demo when it first starts up.
 
 ## Requirements
 NOTE: This patch has only been tested on Ubuntu 20.04. Your mileage may vary for other distros.
@@ -31,6 +31,7 @@ cd ros2_patches
 To clear the current runnning statistics, execute the following command in a new terminal with ROS 2 sourced:
 ```bash
 pendulum_teleop -c
+```
 
 To display the help screen:
 ```bash
